@@ -3,7 +3,7 @@
 URL-Shortener-API is a spring Boot based REST API that takes a URL and returns a shortened URL and persist it in database.
 The project is Home assignment for Neueda interview process.
 
-### Used tools: 
+## Used tools: 
 * Java 11
 * Spring Boot 2.5.3
 * Lombok
@@ -21,7 +21,7 @@ This project depends on
 * Spring Test (spring-boot-starter-test)
 * String Actuator (spring-boot-starter-actuator)
 * commons-validator:1.7 (to validate URL)
-* InMemory Database H2 (Only for tests case)
+* InMemory Database H2 (only for tests case)
 
 ## Building Project
 
@@ -90,7 +90,7 @@ This endpoint will return the result of health checks.
 
 ```shell script
 curl -X POST \
-  http://localhost:8080/shorten \
+  http://localhost:8080/shorten-url \
   -H 'Content-Type: application/json' \
   -d '{"fullUrl":"https://www.google.com/search?q=java+for+beginners&sxsrf=ALeKk0008eRMwv-UE7OGI9e4sfLHt-wV7g%3A1629193315095&ei=Y4QbYaymBbSC9u8P-OqQ4A0&oq=Java&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQARgAMgQIIxAnMgQIIxAnMgQIIxAnMgUILhCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMggIABCABBCLAzoHCCMQsAMQJzoHCAAQRxCwAzoQCC4QxwEQ0QMQyAMQsAMQQzoKCC4QyAMQsAMQQzoLCC4QgAQQxwEQrwE6DgguEIAEEMcBEK8BEIsDOgsILhCABBDHARCjAjoICC4QgAQQiwM6BwgjEOoCECc6CggjEOoCECcQiwM6BQgAEMsBOggIABDLARCLAzoHCAAQChDLAToFCC4QywE6DgguEIAEEMcBEKMCEIsDSgUIOBIBMUoECEEYAFCmIFjKsAFgl70BaBFwAngBgAGfAogBiBaSAQYwLjE0LjOYAQCgAQGwAQrIAQy4AQPAAQE&sclient=gws-wiz-serp"}'
 ```
