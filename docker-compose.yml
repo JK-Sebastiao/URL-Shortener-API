@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  api-server:
+    container_name: url-shortener
+    build:
+      context: .
+      dockerfile: dockerfiles/api.Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://url-db:3306/urldb
+    ports:
+      - "8080:8080"
+    networks:
+      - neueda-network
+    depends_on:
+      - api-db
+
+  api-db:
+    container_name: url-db
+    build:
+      context: .
+      dockerfile: dockerfiles/db.Dockerfile
+    networks:
+      - neueda-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=p@ssw0rd
+      - MYSQL_DATABASE=urldb
+      - MYSQL_USER=urlshortener
+      - MYSQL_PASSWORD=123456
+    ports:
+      - '3306:3306'
+
+networks:
+  neueda-network:
