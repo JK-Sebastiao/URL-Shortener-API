@@ -8,7 +8,7 @@ public class ShortenUtil {
     public static Long strToId(String str) {
         Long num = 0L;
         for (int i = 0; i < str.length(); i++) {
-            num *= BASE + ALPHABET.indexOf(str.charAt(i));
+            num = num * BASE + ALPHABET.indexOf(str.charAt(i));
         }
         return num;
     }
